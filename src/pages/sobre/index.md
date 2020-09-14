@@ -80,6 +80,8 @@ Svelte + Routify + Netlify
 - [ ] Template Home
 - [ ] Template Bloglist
 - [ ] Template Blog post
+- [ ] SEO
+- [ ] Feed RSS
 - [ ] Area de comentários
 - [ ] Netlify CMS
 - [ ] Importar Portfolio

@@ -4,3 +4,5 @@
 **/.history
 /src/tmp/
 .routify
+# Local Netlify folder
+.netlify
