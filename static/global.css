@@ -1,66 +1,186 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --color-bg: #1d1f21;
+  --color-bg-offset: #252526;
+  --color-text: #ffffff;
+  --color-text-offset: #818a91;
+  --color-border: #2d2d2d;
+  --color-primary: #ff5277;
+  --color-primary-offset: #ff2957;
+  --color-secondary: #43a9a3;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5em 0;
+}
+
+/* TYPOGRAPHY */
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+body,
+html {
+  /* Change default typefaces here */
+  font-family: "Anonymous Pro", monospace, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 107.5%;
+  -webkit-font-smoothing: antialiased;
+}
+/* Copy & Lists */
+p {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+ul li,
+ol li {
+  line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Change heading typefaces here */
+  font-family: "Poppins", sans-serif;
+  /* margin-top: 1.5rem; */
+  /* margin-bottom: 0; */
+  /* line-height: 2.5rem; */
+}
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 3rem;
+}
+h2 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  margin-top: 2.5rem;
+}
+h3 {
+  font-size: 1.414rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
+}
+h4 {
+  font-size: 0.707rem;
+}
+h5 {
+  font-size: 0.4713333333333333rem;
+}
+h6 {
+  font-size: 0.3535rem;
+}
+/* Tables */
+table {
+  margin-top: 1.5rem;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0;
+  line-height: 33px;
+}
+/* Code blocks */
+code {
+  vertical-align: bottom;
+}
+/* Leading paragraph text */
+.lead {
+  font-size: 1.414rem;
+}
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+img {
+  max-width: 100%;
+}
+/* CUSTOM */
+
+body {
+  overflow-x: hidden;
+  -webkit-transition: color 0.15s, background-color 0.15s;
+  transition: color 0.15s, background-color 0.15s;
+  /* color: var(--color-text); */
+  /* background-color: var(--color-bg); */
+  /* border: 5px solid #43a9a3; */
+  /* outline-offset: -5px; */
+}
+iframe {
+  max-width: 100%;
 }
 
 a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+  transition: all 300ms ease;
+  color: #327a76;
 }
-
 a:hover {
-	text-decoration: underline;
+  color: #43a9a3;
+  text-decoration: none;
 }
 
-a:visited {
-	color: rgb(0,80,160);
+code {
+  font-family: menlo, inconsolata, monospace;
+  font-size: calc(1em - 2px);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
 }
 
-label {
-	display: block;
+@media (min-width: 400px) {
+  /* body {
+	  font-size: 16px;
+	} */
 }
 
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+/* body,
+body > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-input:disabled {
-	color: #ccc;
+.container {
+  max-width: 1200px;
 }
+.mx-auto {
+  margin: unset auto;
+} */
+/* MAIN GRID  */
 
-input[type="range"] {
-	height: 0;
-}
-
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
-}
-
-button:disabled {
-	color: #999;
-}
-
-button:not(:disabled):active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
+/* END */
+h4 {
+  font-size: 1rem;
 }

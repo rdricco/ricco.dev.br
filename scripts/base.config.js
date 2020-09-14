@@ -44,18 +44,15 @@ function baseConfig(config, ctx) {
         ? { format: 'esm', dir: buildDir }
         : { format: 'iife', file: `${buildDir}/bundle.js` }
 
-    const _svelteConfig = {
+    const svelteConfig = {
         dev: !production, // run-time checks      
         // Extract component CSS — better performance
         css: css => css.write(`${buildDir}/bundle.css`),
         hot: isNollup,
     }
-    
-    const svelteConfig = svelteWrapper(_svelteConfig, ctx) || _svelteConfig
 
-    const _rollupConfig = {
+    const rollupConfig = {
         inlineDynamicImports: !dynamicImports,
-        preserveEntrySignatures: false,
         input: `src/main.js`,
         output: {
             name: 'routify_app',
@@ -71,7 +68,7 @@ function baseConfig(config, ctx) {
                 copyOnce: true,
                 flatten: false
             }),
-            svelte(svelteConfig),
+            svelte(svelteWrapper(svelteConfig, ctx)),
 
             // resolve matching modules from current working directory
             resolve({
@@ -90,13 +87,11 @@ function baseConfig(config, ctx) {
         }
     }
 
-    const rollupConfig = rollupWrapper(_rollupConfig, ctx) || _rollupConfig
-
-    return rollupConfig
+    return rollupWrapper(rollupConfig, ctx)
 
     function transform(contents) {
         const scriptTag = typeof config.scriptTag != 'undefined' ?
-            config.scriptTag : '<script type="module" defer src="/build/main.js"></script>'
+        config.scriptTag : '<script type="module" defer src="/build/main.js"></script>'
         const bundleTag = '<script defer src="/build/bundle.js"></script>'
         return contents.toString().replace('__SCRIPT__', dynamicImports ? scriptTag : bundleTag)
     }
@@ -108,7 +103,7 @@ function baseConfig(config, ctx) {
  */
 function serviceWorkerConfig(config) {
     const { distDir, production, swWrapper } = config
-    const _rollupConfig = {
+    const rollupConfig = {
         input: `src/sw.js`,
         output: {
             name: 'service_worker',
@@ -123,7 +118,5 @@ function serviceWorkerConfig(config) {
             replace({ 'process.env.NODE_ENV': "'production'" })
         ]
     }
-    const rollupConfig = swWrapper(_rollupConfig, {}) || _rollupConfig
-    
-    return rollupConfig
+    return swWrapper(rollupConfig, {})
 }

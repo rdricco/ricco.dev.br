@@ -1,2 +1,63 @@
+<script>
+  import { metatags, page } from "@sveltech/routify";
+  import Navigation from "./_navigation.svelte";
+  import Copyright from "svelte-copyright";
+  import SrcOnGithub from "../components/SrcOnGithub.svelte";
 
-<slot />
+  $: metatags.title = `ricco.dev.br - ${$page.title}`;
+  metatags.description = "Descrição em breve...";
+</script>
+
+<style>
+  .lt-grid-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px minmax(300px, 768px) auto;
+    grid-template-rows: minmax(calc(100% - 61px), auto) 60px;
+    gap: 1px 1px;
+    grid-template-areas:
+      "lt-Aside lt-Content ."
+      "lt-Footer lt-Footer lt-Footer";
+  }
+
+  .lt-Aside {
+    grid-area: lt-Aside;
+    padding: 15px;
+    margin: 0;
+    border-right: 0.5px lightgray solid;
+    padding: 34px 25px 22px 50px;
+    margin: 0px 25px 0 0;
+    background-color: white;
+    color: black;
+  }
+
+  .lt-Content {
+    grid-area: lt-Content;
+  }
+  .lt-Footer {
+    grid-area: lt-Footer;
+    margin: 0;
+    background-color: whitesmoke;
+  }
+  @media (max-width: 768px) {
+    .lt-grid-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="lt-grid-container">
+  <aside class="lt-Aside">
+    <span>ricco.dev.br</span>
+    <Navigation />
+  </aside>
+  <main class="lt-Content">
+    <slot />
+  </main>
+  <footer class="lt-Footer">
+    <Copyright>renato ricco</Copyright>
+    <SrcOnGithub />
+  </footer>
+</div>
