@@ -8,7 +8,7 @@ padding-left: 0;
 }
 </style>
 
-Social:
+**Social**:
 
 <div class="social">
     <p>
@@ -64,8 +64,11 @@ Social:
     </a>
 </div>
 
-TODO
+**Stack do site:**
 
+Svelte + Routify + Netlify
+
+**TODO**
 
 - [x] Template Básico
 - [x] Posts Iniciais
@@ -81,4 +84,5 @@ TODO
 - [ ] Netlify CMS
 - [ ] Importar Portfolio
 - [ ] Integração com api DEV
+- [ ] Integração com api Pocket
 - [ ] Testes unitários

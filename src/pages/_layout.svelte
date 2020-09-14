@@ -50,7 +50,8 @@
 
 <div class="lt-grid-container">
   <aside class="lt-Aside">
-    <span>ricco.dev.br</span>
+    <span> <strong>
+        ricco.dev.br </strong> </span>
     <Navigation />
   </aside>
   <main class="lt-Content">
