@@ -21,7 +21,7 @@ O comitê foi formado por desenvolvedores da Sun Microsystems, Netscape Communic
 
 ## ECMAScript não é somente para navegadores
 
-ECMAScript é uma linguagem de script cross-platform de uso geral e não está vinculada apenas a navegadores da web. ECMA-262 define os padrões com base nos quais uma linguagem de script mais robusta pode ser construída. ECMA-262 define as seguintes partes do idioma e não se refere a navegadores da web
+ECMAScript é uma linguagem de script cross-platform de uso geral e não está vinculada apenas a navegadores da web. ECMA-262 define os padrões com base nos quais uma linguagem de script mais robusta pode ser construída. ECMA-262 define as seguintes partes do idioma e não se refere a navegadores da web:
 
 - Sintaxe
 - Tipos
@@ -35,14 +35,14 @@ JavaScript apenas implementa ECMAScript em uma linguagem de script mais madura e
 
 ## Conformidade ECMAScript
 
-Então, o que significa conformidade com ECMAScript? Quando uma linguagem de programação seria considerada em conformidade com o ECMAScript com base nos padrões estabelecidos no ECMA-262? Você pode ver a [Especificação ECMAScript] mais recente (https://www.ecma-international.org/ecma-262/), mas a conformidade de uma implementação se resume ao seguinte:
+Então, o que significa conformidade com ECMAScript? Quando uma linguagem de programação seria considerada em conformidade com o ECMAScript com base nos padrões estabelecidos no ECMA-262? Você pode ver a [Especificação ECMAScript](https://www.ecma-international.org/ecma-262/) mais recente, mas a conformidade de uma implementação se resume ao seguinte:
 
 - Uma implementação deve oferecer suporte a todas as partes da linguagem, conforme mencionado no padrão e destacado acima.
 - Suporta o padrão de caracteres Unicode.
 - Uma implementação em conformidade pode adicionar outros tipos, objetos, funções, etc. que não são especificados no documento de especificação.
 - Estenda o suporte embutido para expressões regulares.
 
-Há uma [suite de teste para ECMA-262] (https://github.com/tc39/test262) disponível no GitHub e usada para testar a conformidade com os padrões.
+Há uma [suite de teste para ECMA-262](https://github.com/tc39/test262) disponível no GitHub e usada para testar a conformidade com os padrões.
 
 ## O motor do JavaScript
 
@@ -63,9 +63,9 @@ Um runtime JavaScript (ou um host JavaScript) pode ser entendido como um contêi
 
 Como agora sabemos o que são o JavaScript Engine e o JavaScript Host Environment (JavaScript Runtime), estamos em uma posição melhor para entender como NodeJs e o Google Chrome são executados no mesmo V8 Engine e ainda executam funcionalidades muito diferentes. O segredo é que eles têm o mesmo mecanismo de JavaScript, mas um runtime JavaScript muito diferente. Em suma, o runtime de um navegador pode ter as seguintes implementações básicas que são úteis para criar aplicativos da web:
 
-- **The Core** \ - A implementação básica de JavaScript com todas as funções de entrada e saída que os desenvolvedores podem usar.
-- **Document Object Model (DOM)** \ - Isso é o que o navegador renderiza como uma hierarquia de nós a serem exibidos para o cliente ou usuário para XML e HTML.
-- **Browser Object Model (BOM)** \ - É o que permite aos desenvolvedores manipular a janela do navegador. Usando o BOM, os desenvolvedores podem acessar os recursos do navegador e manipulá-los fora do contexto do DOM ou da página que está sendo renderizada.
+- **The Core** - A implementação básica de JavaScript com todas as funções de entrada e saída que os desenvolvedores podem usar.
+- **Document Object Model (DOM)** - Isso é o que o navegador renderiza como uma hierarquia de nós a serem exibidos para o cliente ou usuário para XML e HTML.
+- **Browser Object Model (BOM)** - É o que permite aos desenvolvedores manipular a janela do navegador. Usando o BOM, os desenvolvedores podem acessar os recursos do navegador e manipulá-los fora do contexto do DOM ou da página que está sendo renderizada.
 
 Por outro lado, um runtime NodeJs teria implementações que são úteis para desenvolver aplicativos do lado do servidor. Ele contém as seguintes implementações como exemplo:
 

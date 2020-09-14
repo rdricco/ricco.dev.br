@@ -13,13 +13,13 @@ tags:
 
 # {title}
 
-A evolução das tecnologias mudou a maneira como construímos a arquitetura de aplicativos. Os serviços Docker, Cloud e Container Orchestration nos trouxeram a capacidade de desenvolver soluções distribuídas, mais escalonáveis e confiáveis. Neste artigo, compararemos microsserviços e arquitetura monolítica, discutiremos quais equipes e projetos devem usar que tipo de arquitetura e exploraremos suas vantagens e desvantagens.
+A evolução das tecnologias mudou a maneira como construímos a arquitetura de aplicativos. Os serviços _Docker_, _Cloud_ e _Container Orchestration_ nos trouxeram a capacidade de desenvolver soluções distribuídas, mais escalonáveis e confiáveis. Neste artigo, compararemos microsserviços e arquitetura monolítica, discutiremos quais equipes e projetos devem usar que tipo de arquitetura e exploraremos suas vantagens e desvantagens.
 
 De relance, a diferença entre esses tipos pode ser ilustrada assim
 
 ![microservices vs monolith](https://res.cloudinary.com/practicaldev/image/fetch/s--seen3BGm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/2697570/49395813-cd094980-f737-11e8-9e9a-6c20db5720c4.jpg)
+_*Não é estritamente verdade que os aplicativos monoliticos sejam sempre simples_
 
-Não é estritamente verdade que os aplicativos monolith são sempre simples, mas os microsserviços costumam ser 10 vezes maiores e quase sempre requerem mais recursos.
 
 Vamos discutir os prós e os contras de cada um, ponto por ponto.
 
@@ -39,7 +39,7 @@ A arquitetura de microsserviços é a vencedora óbvia aqui. A interrupção de 
 
 **Escalabilidade**
 
-Para escalabilidade, microsserviços são mais adequados. Os aplicativos Monolith são difíceis de escalar porque, mesmo se você executar mais trabalhadores, cada trabalhador estará no projeto único e completo, uma forma ineficiente de usar recursos. Pior, você pode escrever seu código de uma maneira que torne impossível dimensioná-lo horizontalmente, deixando apenas o dimensionamento vertical possível para seu aplicativo monolith. Com microsserviços, isso é muito mais fácil. Os recursos podem ser usados ​​com mais cuidado e permitem dimensionar apenas as partes que exigem mais recursos.
+Para escalabilidade, microsserviços são mais adequados. Os aplicativos Monolith são difíceis de escalar porque, mesmo se você executar mais trabalhadores, cada trabalhador estará no projeto único e completo, uma forma ineficiente de usar recursos. Pior, você pode escrever seu código de uma maneira que torne impossível dimensioná-lo horizontalmente, deixando apenas o dimensionamento vertical possível para seu aplicativo monolith. Com microsserviços, isso é muito mais fácil. Os recursos podem ser usados com mais cuidado e permitem dimensionar apenas as partes que exigem mais recursos.
 
 **Custo**
 
