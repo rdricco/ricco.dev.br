@@ -1,14 +1,15 @@
 <style>
-  svg {
-    width: 25px;
-  }
-  .social {
+img,
+svg {
+    max-width: 25px;
+}
+.social {
     margin-top: 35px;
-  }
+}
 </style>
 
 <div class="social">
-  <strong> Social: </strong>
+  <strong>Social:</strong>
   <p>
     <a href="https://www.linkedin.com/in/renatoricco" rel="nofollow">
       <img

@@ -11,6 +11,7 @@
   }
   .icones svg {
     height: 30px;
+    max-width: 30px;
   }
 </style>
 
