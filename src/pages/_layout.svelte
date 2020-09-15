@@ -1,9 +1,11 @@
 <script>
-  import { metatags, page } from "@sveltech/routify";
+  import { metatags, page, layout, routes } from "@sveltech/routify";
   import Navigation from "./_navigation.svelte";
   import Copyright from "svelte-copyright";
   import SrcOnGithub from "../components/SrcOnGithub.svelte";
+  
 
+  
   $: metatags.title = `ricco.dev.br - ${$page.title}`;
   metatags.description = "Descrição em breve...";
 </script>

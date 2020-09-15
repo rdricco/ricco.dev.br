@@ -1,7 +1,10 @@
 <script>
-    import Social from "../../components/Social/index.svelte"
     import { metatags } from '@sveltech/routify'
     metatags.title = 'Sobre'+ " | ricco.dev.br"
+    import Hero from "../../components/Hero/index.svelte"
+    import Stack from "../../components/Stack/index.svelte"
+    import Social from "../../components/Social/index.svelte"
+    import GitHubFeatured from "../../components/GitHubFeatured/index.svelte"
 </script>
 <style>
 
@@ -10,29 +13,7 @@ list-style: none;
 padding-left: 0;
 }
 </style>
+<Hero/>
+<Stack/>
 <Social/>
-
-**Stack do site:**
-
-Svelte + Routify + Netlify
-
-**TODO**
-
-- [x] Template Básico
-- [x] Posts Iniciais
-- [x] Versionamento
-- [x] Netlify CI/CD
-- [ ] Sobre o Site
-- [ ] Informações de Contato
-- [ ] Template Sidebar
-- [ ] Template Home
-- [ ] Template Bloglist
-- [ ] Template Blog post
-- [ ] SEO
-- [ ] Feed RSS
-- [ ] Area de comentários
-- [ ] Netlify CMS
-- [ ] Importar Portfolio
-- [ ] Integração com api DEV
-- [ ] Integração com api Pocket
-- [ ] Testes unitários
+<GitHubFeatured/>

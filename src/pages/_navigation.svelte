@@ -18,7 +18,10 @@
 </style>
 
 <nav class="header">
-  {#each $layout.parent.children as { path, title }}
+  <!-- {#each $layout.parent.children as { path, title }}
     <a href={$url(path)} class:active={$isActive(path)}>{title}</a>
-  {/each}
+  {/each} -->
+  <a href="/">home</a>
+  <a href="/sobre">sobre</a>
+  <a href="/TODO">TO-DO</a>
 </nav>
