@@ -1,7 +1,13 @@
 <script>
     import Social from "../../components/Social/index.svelte"
 </script>
+<style>
 
+ul{
+list-style: none;
+padding-left: 0;
+}
+</style>
 <Social/>
 
 **Stack do site:**
