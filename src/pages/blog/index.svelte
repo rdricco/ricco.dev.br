@@ -1,7 +1,8 @@
 <script>
-  import { url, layout } from "@sveltech/routify";
-  import marked from "marked";
+  import { url, metatags, layout } from "@sveltech/routify";
+  metatags.title = 'Blog'+ " | ricco.dev.br"
 
+  import marked from "marked";
   const posts = $layout.parent.children
     .filter((c) => c.meta["frontmatter"])
     .sort((a, b) =>

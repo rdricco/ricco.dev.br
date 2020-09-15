@@ -10,7 +10,7 @@ svg {
 
 <div class="social">
   <strong>Social:</strong>
-  <p>
+  <div>
     <a href="https://www.linkedin.com/in/renatoricco" rel="nofollow">
       <img
         src="https://user-images.githubusercontent.com/25087769/87172072-530a5080-c2dc-11ea-8e2c-8ee4dbf3394b.png"
@@ -44,7 +44,7 @@ svg {
         alt="email"
         style="max-width:100%;" />
     </a>
-  </p>
+  </div>
 </div>
 
 <div hidden>

@@ -1,5 +1,7 @@
 <script>
     import Social from "../../components/Social/index.svelte"
+    import { metatags } from '@sveltech/routify'
+    metatags.title = 'Sobre'+ " | ricco.dev.br"
 </script>
 <style>
 
