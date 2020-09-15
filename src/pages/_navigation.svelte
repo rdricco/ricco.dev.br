@@ -7,6 +7,14 @@
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: row;
+    }
+    a {
+      margin-left: 5px;
+    }
+  }
 </style>
 
 <nav class="header">

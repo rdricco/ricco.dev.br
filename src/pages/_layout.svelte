@@ -40,6 +40,16 @@
     background-color: whitesmoke;
   }
   @media (max-width: 768px) {
+    .lt-Aside {
+      display: flex;
+      justify-content: space-between;
+      border-right: none;
+      border-bottom: 0.5px lightgray solid;
+      padding: 34px 16px 22px 16px;
+      margin: 0px;
+      background-color: white;
+      color: black;
+    }
     .lt-grid-container {
       min-height: 100vh;
       display: flex;
@@ -50,8 +60,7 @@
 
 <div class="lt-grid-container">
   <aside class="lt-Aside">
-    <span> <strong>
-        ricco.dev.br </strong> </span>
+    <span> <strong> ricco.dev.br </strong> </span>
     <Navigation />
   </aside>
   <main class="lt-Content">
