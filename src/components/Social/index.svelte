@@ -11,7 +11,7 @@ svg {
 <div class="social">
   <strong>Social:</strong>
   <div>
-    <a href="https://www.linkedin.com/in/renatoricco" rel="nofollow">
+    <a href="https://www.linkedin.com/in/renatoricco" rel="me">
       <img
         src="https://user-images.githubusercontent.com/25087769/87172072-530a5080-c2dc-11ea-8e2c-8ee4dbf3394b.png"
         alt="linkedin"
@@ -23,7 +23,7 @@ svg {
         alt="github"
         style="max-width:100%;" />
     </a>
-    <a href="https://dev.to/rdricco" rel="nofollow">
+    <a href="https://dev.to/rdricco" rel="me">
       <img
         src="https://camo.githubusercontent.com/6bc5e62e0bf5e21ab8054b731540529bbc8e01b3/68747470733a2f2f6432666c746978307632653073622e636c6f756466726f6e742e6e65742f6465762d62616467652e737667"
         alt="renato ricco's DEV Profile"
@@ -32,7 +32,7 @@ svg {
         width="24"
         height="24" />
     </a>
-    <a href="https://renatoricco.com" rel="nofollow">
+    <a href="https://renatoricco.com" rel="me">
       <img
         src="https://user-images.githubusercontent.com/25087769/87173861-0aa06200-c2df-11ea-9614-da65c9c73692.png"
         alt="website"
