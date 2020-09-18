@@ -38,7 +38,7 @@ svg {
         alt="website"
         style="max-width:100%;" />
     </a>
-    <a href="mailto:renato@ricco.dev.br">
+    <a href="mailto:renato@ricco.dev.br" rel="me">
       <img
         src="https://user-images.githubusercontent.com/25087769/87174308-a4680f00-c2df-11ea-90b0-5fa1fa76d2f1.png"
         alt="email"
