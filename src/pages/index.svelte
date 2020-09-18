@@ -49,7 +49,11 @@
 
         <ul class="tags">
           {#each meta.frontmatter.tags as item}
-            <li>{item}</li>
+            <li>
+              <small>
+              {item}
+            </small>
+          </li>
           {/each}
         </ul>
       </li>

@@ -1,6 +1,7 @@
 <script>
   import { metatags, page, layout, routes } from "@sveltech/routify";
   import Navigation from "./_navigation.svelte";
+  import Social from "../components/Social/index.svelte";
   import Copyright from "svelte-copyright";
   import SrcOnGithub from "../components/SrcOnGithub.svelte";
   
@@ -64,6 +65,7 @@
   <aside class="lt-Aside">
     <span> <strong> ricco.dev.br </strong> </span>
     <Navigation />
+    <Social />
   </aside>
   <main class="lt-Content">
     <slot />
