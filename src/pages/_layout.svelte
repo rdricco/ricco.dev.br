@@ -4,10 +4,7 @@
   import Social from "../components/Social/index.svelte";
   import Copyright from "svelte-copyright";
   import SrcOnGithub from "../components/SrcOnGithub.svelte";
-  
-
-  
-  $: metatags.title = `ricco.dev.br - ${$page.title}`;
+  $: metatags.title = `${$page.title} | ricco.dev.br`;
   metatags.description = "Descrição em breve...";
 </script>
 

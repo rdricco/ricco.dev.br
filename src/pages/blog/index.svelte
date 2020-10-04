@@ -1,7 +1,5 @@
 <script>
   import { url, metatags, layout } from "@sveltech/routify";
-  metatags.title = 'Blog'+ " | ricco.dev.br"
-
   import marked from "marked";
   const posts = $layout.parent.children
     .filter((c) => c.meta["frontmatter"])
@@ -10,10 +8,6 @@
         a.meta["frontmatter"].published
       )
     );
-
-
-
-
 </script>
 
 <style>
@@ -50,3 +44,6 @@
     {/if}
   {/each}
 </ul>
+
+
+<!-- routify:options title="Blog | ricco.dev" -->
