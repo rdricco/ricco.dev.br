@@ -22,20 +22,20 @@ padding-left: 0;
 
 **TODO**
 
-- [x] Template Básico
-- [x] Posts Iniciais
+- [x] Template Básico (rascunho)
+- [x] Posts Iniciais (marcação)
 - [x] Versionamento
 - [x] Netlify CI/CD
 - [ ] Sobre o Site
-- [ ] Informações de Contato
+- [x] Informações de Contato 
 - [ ] Template Sidebar
 - [ ] Template Home
 - [ ] Template Bloglist
 - [ ] Template Blog post
-- [ ] SEO
+- [ ] SEO (og, etc)
 - [ ] Feed RSS
-- [ ] Area de comentários
-- [ ] Netlify CMS
+- [x] Area de comentários (self-hosted)
+- [ ] Netlify CMS (ou forestry?)
 - [ ] Importar Portfolio
 - [ ] Integração com api DEV
 - [ ] Integração com api Pocket
