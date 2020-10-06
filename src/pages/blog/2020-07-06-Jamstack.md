@@ -8,7 +8,7 @@ layout: blog
 draft: false
 category: "blog"
 tags:
-  - infra
+  - arquitetura
 ---
 
 # {title}
