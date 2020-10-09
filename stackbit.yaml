@@ -1,0 +1,24 @@
+stackbitVersion: ~0.3.0
+ssgName: Routify
+buildCommand: npm run export # build command that builds static site
+publishDir: dist # folder with the generated static site files
+staticDir: static # folder with files that are copied to publishDir as is
+uploadDir: static/images # folder with media files, relative to staticDir
+pagesDir: src/pages # folder with markdown page files
+dataDir: data # folder with data files (yaml, json, toml)
+excludePages:
+    - example/**/*
+    - README.md
+models:
+    home:
+        type: page
+        singleInstance: true
+        urlPath: "/"
+    page:
+        type: page
+        urlPath: "/{slug}"
+    post:
+        type: page
+        urlPath: "/blog/{slug}"
+    author:
+        type: data
