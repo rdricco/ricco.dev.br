@@ -62,7 +62,7 @@
   <aside class="lt-Aside">
     <span> <strong> ricco.dev.br </strong> </span>
     <Navigation />
-    <Social />
+    <!-- <Social /> -->
   </aside>
   <main class="lt-Content">
     <slot />

@@ -34,7 +34,7 @@ padding-left: 0;
 - [ ] Template Blog post
 - [ ] SEO (og, etc)
 - [ ] Feed RSS
-- [x] Area de comentários (self-hosted)
+- [ ] Area de comentários (self-hosted?)
 - [ ] Netlify CMS (ou forestry?)
 - [ ] Importar Portfolio
 - [ ] Integração com api DEV

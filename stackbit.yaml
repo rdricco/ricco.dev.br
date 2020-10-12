@@ -1,24 +1,39 @@
 stackbitVersion: ~0.3.0
-ssgName: Routify
-buildCommand: npm run export # build command that builds static site
-publishDir: dist # folder with the generated static site files
-staticDir: static # folder with files that are copied to publishDir as is
-uploadDir: static/images # folder with media files, relative to staticDir
-pagesDir: src/pages # folder with markdown page files
-dataDir: data # folder with data files (yaml, json, toml)
-excludePages:
-    - example/**/*
-    - README.md
+staticDir: static  # folder with files that are copied to publishDir as is
+uploadDir: images  # folder with media files, relative to staticDir
+pagesDir: /src/pages  # folder with markdown page files
+dataDir: data      # folder with data files (yaml, json, toml)
+excludePages: 
+  - example/**/*
+  - README.md
 models:
-    home:
-        type: page
-        singleInstance: true
-        urlPath: "/"
-    page:
-        type: page
-        urlPath: "/{slug}"
-    post:
-        type: page
+  # The schema of the theme or a site
+  # see Models documentation for more info
+  config:
+    type: config
+    label: Configuração do site
+    fields:
+      - type: string
+        name: description
+        label: Configuração do site
+        description: The default site description used in meta data.
+      - type: enum
+        name: palette
+        label: Paleta de Cores
+        description: The color palette of the theme.
+        options:
+          - yellow
+          - blue
+          - green
+          - red
+        default: yellow
+    post: # a model called "post" 
+      - type: page
+        label: Post
+        folder: posts
         urlPath: "/blog/{slug}"
-    author:
-        type: data
+        fields: # array of fields
+      - type: string
+        name: title
+        label: Título do Post
+        description: The default site description used in meta data.

@@ -84,7 +84,7 @@
   class="sauce"
   class:shake
   rel="prefetch"
-  href="https://github.com/rdricco/ricco.dev.br/tree/blog/src/pages{$page.path}.{$page.__file.ext}">
+  href="https://github.com/rdricco/ricco.dev.br/tree/src/pages{$page.path}.{$page.__file.ext}">
   <div class="icon">
     <svg
       role="img"
