@@ -1,0 +1,47 @@
+label: Post
+hide_body: false
+fields:
+  - type: text
+    name: title
+    label: Título
+    description: Título do post.
+    config:
+      required: true
+  - type: text
+    name: subtitle
+    label: Subtítulo
+    description: O texto abaixo do título do post.
+  - type: datetime
+    name: date
+    label: Data
+    config:
+      required: true
+  - type: file
+    name: thumb_img_path
+    label: Imagem de destaque
+    description: A image exibida no feed do blog.
+  - type: file
+    name: content_img_path
+    label: Imagem de destaque alternativa
+    description: >-
+      A imagem exibida como background no lado esquerdo na página do post. Se
+      não houser imagem definida, será usada a imagem padrão especificada nas
+      configurações do Header.
+  - type: text
+    name: excerpt
+    label: Resumo
+    description: O resumo do post que é exibido no feed do blog e na metadata da página.
+  - type: boolean
+    name: hide_header
+    label: Ocultar o header
+    description: Ocultar o header nesse post.
+    default: false
+  - type: text
+    name: template
+    label: Template
+    hidden: true
+    default: post
+    config:
+      required: true
+pages:
+  - src/pages/posts/aaa.md

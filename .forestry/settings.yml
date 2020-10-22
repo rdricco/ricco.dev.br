@@ -1,25 +1,41 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
-webhook_url: 
+admin_path: static/admin
+webhook_url: https://api.stackbit.com/project/5f8f32732a96500015d79235/webhook/forestry
 sections:
-- type: heading
-  label: Conteúdo
+- type: document
+  path: site-metadata.json
+  label: Configurações do Site
+  templates:
+  - config
+- type: document
+  path: src/pages/index.md
+  label: Home
+  templates:
+  - home
+- type: document
+  path: src/pages/contact.md
+  label: Contato
+  templates:
+  - contact
 - type: directory
-  path: src/pages/blog
-  label: Posts
+  path: src/pages
+  label: Pages
   create: all
   match: "**/*"
-upload_dir: static
-public_path: ''
+  new_doc_ext: md
+  templates:
+  - page
+  - post
+upload_dir: static/images
+public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
-  preview_output_directory: "./dist"
+  preview_output_directory: public
   install_dependencies_command: npm install
   preview_docker_image: forestryio/node:12
-  mount_path: "/"
-  working_dir: "/"
-  instant_preview_command: npm run export
+  mount_path: "/srv"
+  instant_preview_command: npm run develop

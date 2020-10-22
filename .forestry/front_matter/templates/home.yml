@@ -1,0 +1,31 @@
+---
+label: Home
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Título
+  description: O Título da página.
+  config:
+    required: true
+- type: text
+  name: excerpt
+  label: Resumo
+  description: Breve resumo que será exibido no metadata da página.
+- type: boolean
+  name: has_more_link
+  label: Mostrar Continue Lendo
+  description: Exibir o botão continue lendo no feed de posts
+  default: true
+- type: text
+  name: more_link_text
+  label: Texto do Continue Lendo
+- type: text
+  name: template
+  label: Template
+  hidden: true
+  default: home
+  config:
+    required: true
+pages:
+- src/pages/index.md

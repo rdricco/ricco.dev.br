@@ -1,0 +1,45 @@
+---
+label: Configurações do Site
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Title
+  description: Site title
+  config:
+    required: true
+- type: text
+  name: description
+  label: Descrição do Site
+  description: Descrição usada na metadata do site.
+- type: select
+  name: palette
+  label: Paleta de Cores
+  description: A paleta de cores usada pelo tema.
+  default: yellow
+  config:
+    source:
+      type: custom
+    options:
+    - yellow
+    - blue
+    - green
+    - red
+- type: field_group
+  name: header
+  label: Configuração do Header
+  fields:
+  - type: include
+    name: include_header
+    label: Configuração do Header
+    template: header
+- type: field_group
+  name: footer
+  label: Configuração do Footer
+  fields:
+  - type: include
+    name: include_footer
+    label: Configuração do Footer
+    template: footer
+pages:
+- site-metadata.json

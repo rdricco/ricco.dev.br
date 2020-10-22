@@ -1,0 +1,62 @@
+---
+label: Configuração do Header
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Título do Header
+  description: O título exibido do lado esquerdo quando não houver imagem de logo.
+    Se não houver valor definido, o nome do autor será usado.
+- type: text
+  name: tagline
+  label: Header - Tagline
+  description: A tagline exibida do lado esquerdo.
+- type: file
+  name: logo_img
+  label: Logo
+  description: A imagem de logo exibida do lado esquerdo.
+- type: file
+  name: background_img
+  label: Imagem de Background
+  description: A imagem de background exibida do lado esquerdo.
+- type: boolean
+  name: has_nav
+  label: Ativar Menu de Navegação
+  description: Exibir o menu de navegação do lado esquerdo.
+  default: true
+- type: field_group_list
+  name: nav_links
+  label: Links de Navegação
+  description: Lista de links para navegação.
+  fields:
+  - type: include
+    name: include_action
+    label: Action
+    template: action
+  config:
+    labelField: label
+- type: boolean
+  name: has_social
+  label: Ativar Links Sociais
+  description: Exibir links sociais no lado esquerdo.
+  default: true
+- type: field_group_list
+  name: social_links
+  label: links Sociais
+  description: Lista dos linkssociais do lado esquerdo.
+  fields:
+  - type: include
+    name: include_action
+    label: Action
+    template: action
+  config:
+    labelField: label
+- type: text
+  name: type
+  label: Object Type
+  description: The type of the object
+  hidden: true
+  default: header
+  config:
+    required: true
