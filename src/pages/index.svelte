@@ -1,12 +1,11 @@
 <script>
-  // import GitHubFeatured from "../components/GitHubFeatured/index.svelte";
   import { url, metatags, layout, routes } from "@sveltech/routify";
   metatags.title = "ricco.dev.br";
-  export let blogPosts = $layout.parent.children;
-  // export let blogPosts = $layout.parent.children.filter(node => node.path === '/blog');
-  console.log(blogPosts[2].children);
+    
+  export let blogPosts = $layout.parent.children.filter(node => node.path === '/blog');
+      
   import marked from "marked";
-  const posts = blogPosts[2].children
+  const posts = blogPosts[0].children
     .filter((c) => c.meta["frontmatter"])
     .sort((a, b) =>
       b.meta["frontmatter"].published.localeCompare(
@@ -28,15 +27,6 @@
   }
 </style>
 
-<!-- <Hero />
-<Stack />
-<GitHubFeatured /> -->
-<!-- 
-{#each $blogPosts as child}
-<li>
-  <p>{child.meta.frontmatter.title}</p>
-</li>
-{/each} -->
 <ul class="posts">
   {#each posts as { meta, path }}
     {#if meta.frontmatter.draft == false}
@@ -60,6 +50,7 @@
     {/if}
   {/each}
 </ul>
+
 
 <!-- routify:options index=10 -->
 <!-- routify:options title="home" -->

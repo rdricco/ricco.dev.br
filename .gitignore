@@ -6,3 +6,4 @@
 .routify
 # Local Netlify folder
 .netlify
+.cache/
