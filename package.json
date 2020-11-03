@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-gatsby-blog-web",
-  "version": "1.0.5",
-  "author": "Sanity <hello@sanity.io>",
+  "name": "ricco-dev-br-site",
+  "version": "4.0.1",
+  "author": "Renato <renato@ricco.dev.br",
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
