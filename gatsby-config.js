@@ -21,7 +21,10 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-sentry"
+      resolve: "gatsby-plugin-sentry",
+      options: {
+        dsn: "https://9119bff43d284615b32ccc5bac970457@o74690.ingest.sentry.io/5502464"
+      }
     }
   ]
 };
