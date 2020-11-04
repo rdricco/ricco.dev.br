@@ -12,57 +12,77 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
 export const query = graphql`
-  fragment SanityImage on SanityMainImage {
-    crop {
-      _key
-      _type
-      top
-      bottom
-      left
-      right
-    }
-    hotspot {
-      _key
-      _type
-      x
-      y
-      height
-      width
-    }
-    asset {
-      _id
-    }
-  }
+         fragment SanityImage on SanityMainImage {
+           crop {
+             _key
+             _type
+             top
+             bottom
+             left
+             right
+           }
+           hotspot {
+             _key
+             _type
+             x
+             y
+             height
+             width
+           }
+           asset {
+             _id
+             localFile {
+               childImageSharp {
+                 fluid (maxWidth: 2560){
+                   src
+                   srcSet
+                 }
+               }
+             }
+           }
+         }
+         fragment LocalImage on SanityMainImage {
+           asset {
+             _id
+             localFile {
+               childImageSharp {
+                 fluid {
+                   src
+                 }
+               }
+             }
+           }
+         }
 
-  query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
-    }
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-  }
-`;
+         query IndexPageQuery {
+           site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+             title
+             description
+             keywords
+           }
+           posts: allSanityPost(
+             limit: 6
+             sort: { fields: [publishedAt], order: DESC }
+             filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+           ) {
+             edges {
+               node {
+                 id
+                 publishedAt
+                 mainImage {
+                   ...SanityImage
+                   alt
+                 }
+                 title
+                 _rawExcerpt
+                 slug {
+                   current
+                 }
+               }
+             }
+           }
+         }
+       `;
 
 const IndexPage = props => {
   const { data, errors } = props;

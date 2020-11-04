@@ -1,35 +1,37 @@
 // Load variables from `.env` as soon as possible
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`
 });
 const config = require("./data/SiteConfig");
-const clientConfig = require("./client-config");
 
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://ricco.dev.br`,
+    siteUrl: "https://ricco.dev.br"
   },
   plugins: [
     "gatsby-plugin-postcss",
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: "pt-br",
-      },
+        lang: "pt-br"
+      }
     },
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-sanity",
       options: {
         ...config.sanity,
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
-        overlayDrafts: !isProd,
-      },
+        overlayDrafts: !isProd
+      }
     },
+    "gatsby-source-sanity-transform-images",
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -60,28 +62,28 @@ module.exports = {
       options: {
         dsn: process.env.YOUR_SENTRY_ID,
         environment: process.env.NODE_ENV,
-        enabled: (() => ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
-      },
+        enabled: (() => ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)()
+      }
     },
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: "gatsby-plugin-nprogress",
       options: {
         // Setting a color is optional.
-        color: `tomato`,
+        color: "tomato",
         // Disable the loading spinner.
-        showSpinner: true,
-      },
+        showSpinner: true
+      }
     },
     {
-      resolve: `@debiki/gatsby-plugin-talkyard`,
+      resolve: "@debiki/gatsby-plugin-talkyard",
       options: {
-        talkyardServerUrl: process.env.YOUR_TALKYARDSERVERURL,
-      },
+        talkyardServerUrl: process.env.YOUR_TALKYARDSERVERURL
+      }
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "renato ricco | ricco.dev.br",
         short_name: "ricco.dev.br",
@@ -93,10 +95,10 @@ module.exports = {
           {
             src: "favicon.png",
             sizes: "512x512",
-            type: "image/png",
-          },
-        ],
-      },
-    },
-  ],
+            type: "image/png"
+          }
+        ]
+      }
+    }
+  ]
 };
