@@ -55,6 +55,7 @@
     "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-source-instagram": "^0.9.0",
     "gatsby-source-sanity-transform-images": "^0.0.7",
+    "gatsby-transformer-sharp": "^2.5.21",
     "styled-components": "^5.2.1"
   }
 }
