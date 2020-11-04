@@ -50,6 +50,7 @@
     "gatsby-plugin-nprogress": "^2.3.13",
     "gatsby-plugin-offline": "^3.3.0",
     "gatsby-plugin-sentry": "^1.0.1",
+    "gatsby-plugin-sharp": "^2.7.1",
     "gatsby-plugin-sitemap": "^2.5.0",
     "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-source-instagram": "^0.9.0",
