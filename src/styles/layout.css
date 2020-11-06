@@ -47,6 +47,7 @@ body > div > div {
 
 body {
   margin: 0;
+  transition: color 300ms ease-in-out;
 }
 
 h1,
