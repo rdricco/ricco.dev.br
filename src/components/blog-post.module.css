@@ -1,10 +1,11 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
-.root {}
+.root {
+}
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: responsiveTitle1 from "./typography.module.css";
 }
 
 .mainImage {
@@ -36,11 +37,12 @@
 
 .mainContent {
   @nest & a {
-    color: var(--color-accent);
+    color: #4ac6a8;
+    transition: color 300ms ease-in-out;
 
     @media (hover: hover) {
       @nest &:hover {
-        color: inherit;
+        color: #64ffda;
       }
     }
   }
@@ -63,13 +65,13 @@
 }
 
 .publishedAt {
-  composes: small from './typography.module.css';
+  composes: small from "./typography.module.css";
   margin: 2rem 0 3rem;
-  color: var(--color-gray);
+  color: #64ffda;
 }
 
 .categories {
-  border-top: 1px solid var(--color-very-light-gray);
+  border-top: 1px solid #ccd6f6;
   margin: 2rem 0 3rem;
 
   @nest & ul {
@@ -84,6 +86,6 @@
 }
 
 .categoriesHeadline {
-  composes: base from './typography.module.css';
+  composes: base from "./typography.module.css";
   margin: 0.5rem 0 0;
 }

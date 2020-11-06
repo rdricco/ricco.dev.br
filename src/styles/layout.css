@@ -1,5 +1,16 @@
 @import "./custom-properties.css";
-
+:root {
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #172a45;
+  --lightest-navy: #303c55;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+}
 html {
   font-family: var(--font-family-sans);
   font-size: var(--font-base-size);
@@ -8,8 +19,8 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: var(--color-white);
-  color: var(--color-black);
+  background: var(--navy);
+  color: var(--light-slate);
   margin: 0;
 }
 
@@ -73,6 +84,7 @@ ol {
 ul li,
 ol li {
   line-height: 1.5rem;
+  color: var(--slate);
 }
 ul ul,
 ol ul,
@@ -171,7 +183,7 @@ iframe {
 
 a {
   transition: all 300ms ease;
-  color: #327a76;
+  color: ##0bdac5;
 }
 a:hover {
   color: #43a9a3;
@@ -182,7 +194,7 @@ code {
   font-family: menlo, inconsolata, monospace;
   font-size: calc(1em - 2px);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--lightest-navy);
   padding: 0.2em 0.4em;
   border-radius: 2px;
 }
@@ -216,14 +228,15 @@ h4 {
 }
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  /* background: #f9f9f9; */
+  color: #0bdac5;
+  border-left: 10px solid #0bdac5;
   margin: 1.5em 10px;
   padding: 1.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before {
-  color: #ccc;
+  color: #0bdac5;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -232,4 +245,13 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--lightest-slate);
 }

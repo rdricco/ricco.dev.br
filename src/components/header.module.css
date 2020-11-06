@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   position: relative;
@@ -22,15 +22,23 @@
   font-weight: 600;
   flex: 1;
 
+  @nest & svg {
+    max-width: 35px;
+    margin-right: 0.5em;
+  }
+
   @nest & a {
-    display: inline-block;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    vertical-align: center;
     padding: 0.5em;
     color: inherit;
     text-decoration: none;
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        color: #0bdac5;
       }
     }
   }
@@ -62,17 +70,21 @@
   @nest & ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
   }
 
   @nest & ul li a {
-    display: block;
+    /* display: flex; */
+
     color: inherit;
     text-decoration: none;
   }
 
   @media (hover: hover) {
     @nest & ul li a:hover {
-      color: var(--color-accent);
+      color: #0bdac5;
     }
   }
 
@@ -95,16 +107,23 @@
   }
 
   @media (--media-min-small) {
-    display: block;
-
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
     @nest & ul {
       list-style: none;
       display: flex;
       justify-content: flex-end;
     }
-
+    @nest & ul li {
+      justify-content: center;
+      display: flex;
+      margin: auto;
+    }
     @nest & ul li a {
       padding: 0.5rem;
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
 }
