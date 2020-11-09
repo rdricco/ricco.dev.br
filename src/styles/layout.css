@@ -184,27 +184,18 @@ iframe {
 
 a {
   transition: all 300ms ease;
-  color: ##0bdac5;
+  color: #0bdac5;
 }
 a:hover {
   color: #43a9a3;
   text-decoration: none;
 }
 
-code {
-  font-family: menlo, inconsolata, monospace;
-  font-size: calc(1em - 2px);
-  color: var(--color-text);
-  background-color: var(--lightest-navy);
-  padding: 0.2em 0.4em;
-  border-radius: 2px;
-}
-
-@media (min-width: 400px) {
-  /* body {
+/* @media (min-width: 400px) {
+  body {
 	  font-size: 16px;
-	} */
-}
+	}
+} */
 
 /* body,
 body > main {
@@ -255,4 +246,48 @@ h4,
 h5,
 h6 {
   color: var(--lightest-slate);
+}
+
+/* Talkyard*/
+.dw-t,
+.esPageColumn,
+.dw-cmts-tlbr,
+iframe .esMetabar {
+  background-color: #0a192f;
+}
+
+.talkyard-comments body {
+  background-color: #0a192f;
+}
+.stack {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.stack img {
+  margin-right: 5px;
+}
+.icones {
+  margin-top: 10px;
+}
+.icones svg {
+  height: 30px;
+  max-width: 30px;
+  fill: whitesmoke;
+  margin-right: 0.5rem;
+}
+
+.icones svg:hover {
+  fill: #0bdac5;
+}
+.repos {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.repos span {
+  margin-bottom: 10px;
+}
+
+.erro404{
+  max-height: 50vh;
 }

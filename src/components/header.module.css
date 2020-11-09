@@ -60,7 +60,7 @@
   }
 
   @media (--media-min-small) {
-    display: none;
+    display: block;
   }
 }
 
@@ -70,14 +70,12 @@
   @nest & ul {
     margin: 0;
     padding: 0;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     vertical-align: center;
   }
 
   @nest & ul li a {
-    /* display: flex; */
-
     color: inherit;
     text-decoration: none;
   }
@@ -101,13 +99,14 @@
       padding: 1rem 0;
     }
 
+
     @nest & ul li a {
       padding: 0.5rem 1.5rem;
     }
   }
 
   @media (--media-min-small) {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     vertical-align: center;
     @nest & ul {
@@ -129,5 +128,6 @@
 }
 
 .showNav {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }

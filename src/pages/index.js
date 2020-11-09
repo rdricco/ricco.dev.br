@@ -117,7 +117,7 @@ const IndexPage = props => {
           <BlogPostPreviewList
             title="Posts recentes"
             nodes={postNodes}
-            browseMoreHref="/archive/"
+            browseMoreHref="/blog/"
           />
         )}
       </Container>

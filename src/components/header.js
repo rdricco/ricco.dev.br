@@ -10,24 +10,28 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
     <div className={styles.wrapper}>
       <div className={styles.branding}>
         <Link to="/">
-          <Icon symbol="logo" /> {siteTitle}
+          <Icon symbol="logo" /> ricco.dev.br
         </Link>
       </div>
-
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol="hamburger" />
-      </button>
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to="/archive/">Arquivo</Link>
+            <Link to="/portifolio/">Portifólio</Link>
+          </li>
+          <li>
+            <Link to="/blog/">Blog</Link>
           </li>
           <li>
             <Link to="/sobre/">Sobre</Link>
           </li>
         </ul>
       </nav>
+      
+      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+        <Icon symbol="hamburger" />
+      </button>
+
     </div>
   </div>
 );

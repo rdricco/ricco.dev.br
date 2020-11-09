@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
-import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
+import WorkPostPreviewGrid from "../components/work-post-preview-grid";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
@@ -11,7 +11,7 @@ import { responsiveTitle1 } from "../components/typography.module.css";
 
 export const query = graphql`
   query ArchivePageQuery {
-    posts: allSanityPost(
+    posts: allSanityWork(
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -49,10 +49,10 @@ const ArchivePage = props => {
 
   return (
     <Layout>
-      <SEO title="Arquivo do Blog" />
+      <SEO title="Portifólio" />
       <Container>
-        <h1 className={responsiveTitle1}>Arquivo</h1>
-        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+        {/* <h1 className={responsiveTitle1}>Portifólio</h1> */}
+        {postNodes && postNodes.length > 0 && <WorkPostPreviewGrid nodes={postNodes} />}
       </Container>
     </Layout>
   );

@@ -18,7 +18,11 @@ export function filterOutDocsPublishedInTheFuture({ publishedAt }) {
 }
 
 export function getBlogUrl(publishedAt, slug) {
-  return `/blog/${format(publishedAt, "YYYY/MM")}/${slug.current || slug}/`;
+  // return `/blog/${format(publishedAt, "YYYY/MM")}/${slug.current || slug}/`;
+  return `/blog/${slug.current || slug}/`;
+}
+export function getWorkUrl(publishedAt, slug) {
+  return `/work/${slug.current || slug}/`;
 }
 
 export function buildImageObj(source = { asset: {} }) {
