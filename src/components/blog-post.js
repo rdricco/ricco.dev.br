@@ -11,7 +11,7 @@ import TalkyardCommentsIframe from "@debiki/gatsby-plugin-talkyard";
 import styles from "./blog-post.module.css";
 
 function BlogPost(props) {
-  console.log(props);
+  // console.log(props);
   const { _rawBody, authors, categories, title, mainImage, publishedAt } = props;
   return (
     <article className={styles.root}>

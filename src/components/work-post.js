@@ -8,7 +8,7 @@ import Container from "./container";
 import styles from "./blog-post.module.css";
 
 function WorkPost(props) {
-  console.log(props);
+  // console.log(props);
   const { _rawBody, title, mainImage } = props;
   return (
     <article className={styles.root}>

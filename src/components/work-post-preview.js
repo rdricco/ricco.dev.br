@@ -18,7 +18,7 @@ function BlogPostPreview(props) {
   const { src } = fluid;
   // const ImagemLocal = Imagem.localFile;
   // const UrlImagemLocal = ImagemLocal.childImageSharp;
-  console.log(src);
+  // console.log(src);
 
   return (
     <Link
