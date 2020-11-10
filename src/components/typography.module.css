@@ -136,3 +136,6 @@
     line-height: var(--font-large-line-height);
   }
 }
+li{
+  margin-bottom: .75rem;
+}
