@@ -32,23 +32,23 @@ module.exports = {
       }
     },
     'gatsby-source-sanity-transform-images',
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: process.env.YOUR_GOOGLE_ANALYTICS_TRACKING_ID,
-    //     head: true,
-    //     anonymize: true,
-    //     respectDNT: true,
-    //     pageTransitionDelay: 0,
-    //     defer: true,
-    //     sampleRate: 5,
-    //     siteSpeedSampleRate: 10,
-    //     cookieDomain: process.env.DOMAIN,
-    //     // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-    //     // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-    //     // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID"
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.YOUR_GOOGLE_ANALYTICS_TRACKING_ID,
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+        defer: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: process.env.DOMAIN,
+        // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID"
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-hotjar`,
     //   options: {
@@ -100,64 +100,56 @@ module.exports = {
         ]
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-feed',
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             title
-    //             description
-    //             siteUrl
-    //             site_url: siteUrl
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     feeds: [
-    //       {
-    //         serialize: ({ query: { site, allSanityPost } }) => {
-    //           return allSanityPost.edges.map(edge => {
-    //             return Object.assign({}, edge.node, {
-    //               description: edge.node._rawExcerpt,
-    //               date: edge.node.publishedAt,
-    //               url: site.siteMetadata.siteUrl + edge.node.slug.current,
-    //               guid: site.siteMetadata.siteUrl + edge.node.slug.current,
-    //               custom_elements: [{ 'content:encoded': edge.node._rawExcerpt }]
-    //             })
-    //           })
-    //         },
-    //         query: `
-    //           {
-    //             allSanityPost(
-    //               allSanityPost(
-    //                 sort: { fields: [publishedAt], order: DESC }
-    //                 filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    //             ) {
-    //               edges {
-    //                 node {
-    //                   id
-    //                   publishedAt
-    //                   mainImage {
-    //                     ...SanityImage
-    //                     alt
-    //                   }
-    //                   title
-    //                   _rawExcerpt
-    //                   slug {
-    //                     current
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         `,
-    //         output: '/rss.xml',
-    //         title: "Your Site's RSS Feed",
-    //       }
-    //     ]
-    //   }
-    // }
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allSanityPost } }) => {
+              return allSanityPost.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  description: edge.node._rawExcerpt,
+                  date: edge.node.publishedAt,
+                  url: site.siteMetadata.siteUrl + edge.node.slug.current,
+                  guid: site.siteMetadata.siteUrl + edge.node.slug.current,
+                  custom_elements: [{ 'content:encoded': edge.node._rawExcerpt }]
+                })
+              })
+            },
+            query: `
+            {
+              allSanityPost(sort: {fields: [publishedAt], order: DESC}, filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+                edges {
+                  node {
+                    id
+                    publishedAt
+                    _rawExcerpt
+                    title
+                    slug {
+                      current
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            output: '/rss.xml',
+            title: "ricco.dev.br feed",
+          }
+        ]
+      }
+    }
   ]
 }
