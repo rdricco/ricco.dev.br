@@ -19,7 +19,8 @@
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        /* color: var(--color-accent); */
+        color: #0bdac5;
       }
     }
   }

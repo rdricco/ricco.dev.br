@@ -3,7 +3,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
 const config = require('./data/SiteConfig')
-
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -12,7 +11,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-postcss',
-    // 'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-remove-console',
+      options: {
+        exclude: ['error', 'warn']
+      }
+    },
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -31,23 +36,29 @@ module.exports = {
         overlayDrafts: !isProd
       }
     },
+    {
+      resolve: 'gatsby-transform-portable-text',
+      options: {
+        extendTypes: [{ typeName: 'SanityPost', contentFieldName: 'body' }]
+      }
+    },
     'gatsby-source-sanity-transform-images',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.YOUR_GOOGLE_ANALYTICS_TRACKING_ID,
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-        pageTransitionDelay: 0,
-        defer: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: process.env.DOMAIN,
+        // head: true,
+        // anonymize: true,
+        // respectDNT: true,
+        // pageTransitionDelay: 0,
+        // defer: true,
+        // sampleRate: 5,
+        // siteSpeedSampleRate: 10,
+        cookieDomain: config.siteMetadata.siteUrl
         // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
         // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
         // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID"
-      },
+      }
     },
     // {
     //   resolve: `gatsby-plugin-hotjar`,
@@ -68,9 +79,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        // Setting a color is optional.
         color: config.themeColor,
-        // Disable the loading spinner.
         showSpinner: true
       }
     },
@@ -85,10 +94,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'renato ricco | ricco.dev.br',
-        short_name: 'ricco.dev.br',
+        name: config.siteTitle,
+        short_name: config.short_name,
         start_url: '/',
-        background_color: '#000',
+        background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
         icons: [
@@ -99,57 +108,64 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allSanityPost } }) => {
-              return allSanityPost.edges.map(edge => {
-                return Object.assign({}, edge.node, {
-                  description: edge.node._rawExcerpt,
-                  date: edge.node.publishedAt,
-                  url: site.siteMetadata.siteUrl + edge.node.slug.current,
-                  guid: site.siteMetadata.siteUrl + edge.node.slug.current,
-                  custom_elements: [{ 'content:encoded': edge.node._rawExcerpt }]
-                })
-              })
-            },
-            query: `
-            {
-              allSanityPost(sort: {fields: [publishedAt], order: DESC}, filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
-                edges {
-                  node {
-                    id
-                    publishedAt
-                    _rawExcerpt
-                    title
-                    slug {
-                      current
-                    }
-                  }
-                }
-              }
-            }
-            `,
-            output: '/rss.xml',
-            title: "ricco.dev.br feed",
-          }
-        ]
-      }
     }
+    // {
+    //   resolve: 'gatsby-plugin-feed',
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             description
+    //             siteUrl
+    //             site_url: siteUrl
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allSanityPost } }) => {
+    //           return allSanityPost.edges.map(edge => {
+    //             const { node } = edge
+    //             const { excerpt } = node
+    //             const { children } = excerpt
+    //             return Object.assign({}, edge.node, children.text,{
+    //               description: children.text,
+    //               date: edge.node.publishedAt,
+    //               url: site.siteMetadata.siteUrl + "/" + edge.node.slug.current,
+    //               guid: site.siteMetadata.siteUrl + "/" + edge.node.slug.current,
+    //               custom_elements: [{ 'content:encoded': children.text }]
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //         {
+    //           allSanityPost(sort: {fields: [publishedAt], order: DESC}, filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+    //             edges {
+    //               node {
+    //                 id
+    //                 title
+    //                 slug {
+    //                   current
+    //                 }
+    //                 publishedAt
+    //                 excerpt {
+    //                   children {
+    //                     text
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }
+    //         `,
+    //         output: '/rss.xml',
+    //         title: "ricco.dev.br feed",
+    //       }
+    //     ]
+    //   }
+    // }
   ]
 }
