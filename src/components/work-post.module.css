@@ -31,14 +31,11 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 2em;
-    grid-template-columns: 3fr 1fr;
+    /* grid-template-columns: 3fr 1fr; */
   }
 }
 
 .mainContent {
-  img {
-    margin-bottom: 20px;
-  }
   @nest & a {
     color: #4ac6a8;
 

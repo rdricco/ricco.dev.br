@@ -5,16 +5,16 @@ import { imageUrlFor } from "../lib/image-url";
 import PortableText from "./portableText";
 import Container from "./container";
 
-import styles from "./blog-post.module.css";
+import styles from "./work-post.module.css";
 
 function WorkPost(props) {
   // console.log(props);
   const { _rawBody, title, mainImage } = props;
   return (
     <article className={styles.root}>
-      {mainImage && mainImage.asset && (
+      {/* {mainImage && mainImage.asset && (
         <Img className={styles.mainImage} fluid={localImage(props)} />
-      )}
+      )} */}
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
