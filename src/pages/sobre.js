@@ -10,11 +10,11 @@ const SobrePage = () => (
       <h1>Sobre</h1>
       <h2>Meu nome é Renato Ricco.</h2>
       <p>
-        Desenvolvedor de front-end com um pé no back-end, outro em redes, um braço em infra e bem.. por aí vai. TI sempre esteve na cabeça.
-        <br />
-        Sou entusiasta do Open Source e apaixonado por aprender coisas novas todos os dias.
-        
-        
+        Desenvolvedor de front-end com um pé no back-end, outro em redes, um braço em infra, sysadmin e bem.. por aí vai. TI sempre esteve na minha cabeça. Sou entusiasta do Software Livre e apaixonado por aprender coisas novas todos os dias.
+        <br/>
+        Criei esse site com a intenção de compartilhar artigos simples, quase introdutórios sobre tecnologias que sejam relevantes para a web. Desenvolvedores e curiosos em geral são bem-vindos e convidados a usar a area de comentários com dúvidas, sugestões ou até elogios - mas só se você quiser.
+        <br/>
+        Quer falar sobre outros assuntos? Legal, topo também! A vida não é só computadores né?
       </p>
       <div class="stack">
         <span> Meu stack de desenvolvimento: </span>

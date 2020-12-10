@@ -39,6 +39,10 @@
   img {
     margin-bottom: 20px;
   }
+  p > code {
+    background-color: seagreen;
+    color: black;
+}
   @nest & a {
     color: #4ac6a8;
 
