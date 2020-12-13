@@ -13,42 +13,26 @@ import Layout from "../containers/layout";
 
 export const query = graphql`
          fragment SanityImage on SanityMainImage {
-           crop {
-             _key
-             _type
-             top
-             bottom
-             left
-             right
-           }
-           hotspot {
-             _key
-             _type
-             x
-             y
-             height
-             width
-           }
            asset {
              _id
              localFile {
                childImageSharp {
                  fluid (maxWidth: 2560){
-                   src
-                   srcSet
+                  srcSet
+                  srcSetWebp
                  }
                }
              }
            }
          }
-         fragment LocalImage on SanityMainImage {
+         fragment SanityPreviewImage on SanityMainImage {
            asset {
              _id
              localFile {
                childImageSharp {
-                 fluid {
-                   src
-                 }
+                fluid (maxWidth: 420) {
+                  srcSet
+                  srcSetWebp            }
                }
              }
            }
@@ -70,7 +54,7 @@ export const query = graphql`
                  id
                  publishedAt
                  mainImage {
-                   ...SanityImage
+                   ...SanityPreviewImage
                    alt
                  }
                  title
