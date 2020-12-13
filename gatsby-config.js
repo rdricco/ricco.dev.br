@@ -36,6 +36,14 @@ module.exports = {
         overlayDrafts: !isProd
       }
     },
+    // {
+    //   resolve: "gatsby-source-lastfm",
+    //   options: {
+    //     api_key: '<<YOUR API KEY HERE>>',
+    //     username: '<<USERNAME TO TRACK>>',
+    //     limit: 200, // the maximum number of playbacks to pull in
+    //   },
+    // },
     {
       resolve: 'gatsby-transform-portable-text',
       options: {
@@ -43,23 +51,23 @@ module.exports = {
       }
     },
     'gatsby-source-sanity-transform-images',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.YOUR_GOOGLE_ANALYTICS_TRACKING_ID,
-        // head: true,
-        // anonymize: true,
-        // respectDNT: true,
-        // pageTransitionDelay: 0,
-        // defer: true,
-        // sampleRate: 5,
-        // siteSpeedSampleRate: 10,
-        cookieDomain: config.siteMetadata.siteUrl
-        // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID"
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: process.env.YOUR_GOOGLE_ANALYTICS_TRACKING_ID,
+    //     // head: true,
+    //     // anonymize: true,
+    //     // respectDNT: true,
+    //     // pageTransitionDelay: 0,
+    //     // defer: true,
+    //     // sampleRate: 5,
+    //     // siteSpeedSampleRate: 10,
+    //     cookieDomain: config.siteMetadata.siteUrl
+    //     // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+    //     // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+    //     // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID"
+    //   }
+    // },
     // {
     //   resolve: `gatsby-plugin-hotjar`,
     //   options: {
@@ -68,14 +76,14 @@ module.exports = {
     //     sv: process.env.YOUR_HOTJAR_SNIPPET_VERSION,
     //   },
     // },
-    {
-      resolve: 'gatsby-plugin-sentry',
-      options: {
-        dsn: process.env.YOUR_SENTRY_ID,
-        environment: process.env.NODE_ENV,
-        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)()
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-sentry',
+    //   options: {
+    //     dsn: process.env.YOUR_SENTRY_ID,
+    //     environment: process.env.NODE_ENV,
+    //     enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)()
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {

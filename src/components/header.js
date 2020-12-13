@@ -28,7 +28,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
         </ul>
       </nav>
       
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+      <button aria-label="Navegação" className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         <Icon symbol="hamburger" />
       </button>
 
