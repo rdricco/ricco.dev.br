@@ -11,19 +11,19 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-postcss',
-    {
-      resolve: 'gatsby-plugin-remove-console',
-      options: {
-        exclude: ['error', 'warn']
-      }
-    },
-    'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-html-attributes',
-      options: {
-        lang: 'pt-br'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-remove-console',
+    //   options: {
+    //     exclude: ['error', 'warn']
+    //   }
+    // },
+    // 'gatsby-plugin-styled-components',
+    // {
+    //   resolve: 'gatsby-plugin-html-attributes',
+    //   options: {
+    //     lang: 'pt-br'
+    //   }
+    // },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -94,7 +94,8 @@ module.exports = {
     {
       resolve: '@debiki/gatsby-plugin-talkyard',
       options: {
-        talkyardServerUrl: process.env.YOUR_TALKYARDSERVERURL
+        talkyardServerUrl: process.env.YOUR_TALKYARDSERVERURL,
+        talkyardLogLevel: "warn"
       }
     },
     'gatsby-plugin-sitemap',
