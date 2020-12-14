@@ -289,9 +289,15 @@ iframe .esMetabar {
 .repos {
   margin-top: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: revert;
+  flex-wrap: wrap;
+}
+
+.repos a {
+  width: 50%;
 }
 .repos span {
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -311,4 +317,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .Intro{
   margin-bottom: 50px;;
+}
+
+@media all and (max-width: 900px) { 
+  .repos a {
+    width: 100%;
+  }
 }

@@ -25,6 +25,7 @@
   @nest & svg {
     max-width: 35px;
     margin-right: 0.5em;
+    width: 100%;
   }
 
   @nest & a {
