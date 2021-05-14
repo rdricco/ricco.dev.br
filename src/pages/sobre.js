@@ -138,12 +138,6 @@ const SobrePage = () => (
             alt=""
           />
         </a>
-        <a href="https://github.com/rdricco/vtexlegacytb">
-          <img
-            src="https://github-readme-stats.vercel.app/api/pin/?username=rdricco&repo=vtexlegacytb"
-            alt=""
-          />
-        </a>
       </div>
     </Container>
   </Layout>
