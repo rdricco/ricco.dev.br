@@ -1,7 +1,0 @@
-name = "ricco-dev-br"
-main = "./dist/_worker.js/index.js"
-compatibility_date = "2024-03-20"
-compatibility_flags = ["nodejs_compat"]
-
-[site]
-bucket = "./dist"
