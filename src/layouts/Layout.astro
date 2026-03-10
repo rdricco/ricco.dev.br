@@ -13,7 +13,7 @@ const { title, description = "Renato Ricco - Personal Profile" } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/LOGO.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -38,8 +38,8 @@ const { title, description = "Renato Ricco - Personal Profile" } = Astro.props;
 		--text-muted: #94a3b8; /* Slate 400 */
 		--card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
 		--card-border: rgba(255, 255, 255, 0.1);
-		--accent-color: #3b82f6; /* Blue 500 */
-		--accent-hover: #60a5fa; /* Blue 400 */
+		--accent-color: #0BDAC5; /* Logo Green */
+		--accent-hover: #3EF0DE; /* Lighter Logo Green */
 	}
 
 	* {
@@ -84,7 +84,7 @@ const { title, description = "Renato Ricco - Personal Profile" } = Astro.props;
 		left: -10%;
 		width: 50vw;
 		height: 50vw;
-		background: radial-gradient(circle, rgba(59,130,246,0.3) 0%, rgba(0,0,0,0) 70%);
+		background: radial-gradient(circle, rgba(11, 218, 197, 0.25) 0%, rgba(0,0,0,0) 70%);
 	}
 
 	.glow-2 {
@@ -92,7 +92,7 @@ const { title, description = "Renato Ricco - Personal Profile" } = Astro.props;
 		right: -10%;
 		width: 60vw;
 		height: 60vw;
-		background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(0,0,0,0) 70%);
+		background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
 		animation-delay: -5s;
 	}
 
